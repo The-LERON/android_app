@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Android_app_1</string>
+    <string name="app_name">My Application</string>
+    <string name="instruction_text">Нажмите кнопку, чтобы бросить кубик</string>
+    <string name="button_text">Кнопка</string>
 </resources>
