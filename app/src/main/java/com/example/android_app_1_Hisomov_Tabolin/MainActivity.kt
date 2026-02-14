@@ -1,5 +1,6 @@
 package com.example.android_app_1_Hisomov_Tabolin
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -7,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: AppCompatActivity
     private lateinit var diceImageView: ImageView
     private lateinit var rollButton: Button
 
@@ -22,17 +23,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        //binding = ActivityMainBinding.inflate(layoutInflater)
+        //setContentView(binding.root)
 
-        diceImageView = findViewById(R.id.imageView)
-        rollButton = findViewById(R.id.button)
+        //binding.rollButton.setOnClickListener {
+            //val randomIndex = (0 until diceImageArray.size).random()
 
-        diceImageView.setImageResource(diceImageArray[0])
+            //binding.diceImageView.setImageResource(diceImageArray[randomIndex])
 
-        rollButton.setOnClickListener {
-            val randomIndex = (0 until diceImageArray.size).random()
-            diceImageView.setImageResource(diceImageArray[randomIndex])
+            diceImageView = findViewById(R.id.imageView)
+            rollButton = findViewById(R.id.button)
+
+            diceImageView.setImageResource(diceImageArray[0])
+
+            rollButton.setOnClickListener {
+                val randomIndex = (0 until diceImageArray.size).random()
+                diceImageView.setImageResource(diceImageArray[randomIndex])
+            }
         }
     }
-}
